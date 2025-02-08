@@ -11,7 +11,7 @@ function App() {
     fetchTodos()
   }, [])
 
-  // Todo-ları API-dən çəkmək üçün funksiya
+  
   const fetchTodos = async () => {
     try {
       const response = await fetch('https://dummyjson.com/todos')
@@ -24,7 +24,7 @@ function App() {
     }
   }
 
-  // Filtrələnmiş todo-ları qaytaran funksiya
+  
   const getFilteredTodos = () => {
     switch (filter) {
       case 'completed':
@@ -36,7 +36,7 @@ function App() {
     }
   }
 
-  // Todo kartı komponenti
+  
   const TodoCard = ({ todo }) => (
     <div className={`todo-card ${todo.completed ? 'completed' : ''}`}>
       <div className="todo-header">
@@ -52,7 +52,7 @@ function App() {
     </div>
   )
 
-  // Add PropTypes validation
+  
   TodoCard.propTypes = {
     todo: PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -66,7 +66,7 @@ function App() {
     <div className="container">
       <h1 className="title">Todo Viewer</h1>
       
-      {/* Filter Düymələri */}
+      
       <div className="filter-buttons">
         <button 
           className={`filter-btn all ${filter === 'all' ? 'active' : ''}`}
@@ -88,7 +88,7 @@ function App() {
         </button>
       </div>
 
-      {/* Yüklənmə və Todo-lar */}
+      
       {loading ? (
         <div className="loading">Yüklənir...</div>
       ) : (
